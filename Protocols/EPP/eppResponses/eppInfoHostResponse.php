@@ -28,7 +28,7 @@ class eppInfoHostResponse extends eppInfoResponse {
      * @return array
      */
     public function getHostAddresses() {
-        $ip = null;
+        $ip = [];
         $xpath = $this->xPath();
         $result = $xpath->query('/epp:epp/epp:response/epp:resData/host:infData/host:addr');
         foreach ($result as $address) {
@@ -43,7 +43,7 @@ class eppInfoHostResponse extends eppInfoResponse {
      * @return null|string[]
      */
     public function getHostStatuses() {
-        $stat = null;
+        $stat = [];
         $xpath = $this->xPath();
         $result = $xpath->query('/epp:epp/epp:response/epp:resData/host:infData/host:status/@s');
         foreach ($result as $status) {
