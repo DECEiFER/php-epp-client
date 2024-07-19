@@ -381,7 +381,7 @@ class eppConnection {
             return $this->connected;
         } else {
             $this->writeLog("Connection could not be opened: $errno $errstr","ERROR");
-            return false;
+            throw new eppException("Connection could not be opened: $errno $errstr", $errno);
         }
 
     }
